@@ -2,13 +2,40 @@
 #include <iomanip>
 using namespace std;
 
-int main() {
-	//INISIASI
-	int pilihan, jumlahBarang;
-	int jumlahBeras1 = 0, jumlahGula = 0, jumlahMinyak = 0, jumlahTelur = 0;
-	int jumlahSabun = 0, jumlahShampoo = 0, jumlahTeh = 0, jumlahKopi = 0;
-	int jumlahRokok = 0, jumlahMie = 0;
+int pilihan, jumlahBarang;
+int hargaBeras1 = 15000, hargaGula = 14000, hargaMinyak = 16000, hargaTelur = 27000;
+	int hargaSabun = 8000, hargaShampoo = 12000, hargaTeh = 6000, hargaKopi = 2000;
+	int hargaRokok = 25000, hargaMie = 3500;
 
+// // void TotalHarga(int totalharga){
+// // 		totalharga = (jab.jumlahberas * hargaBeras1) + (jab.jumlahgula * hargaGula) +
+// // 	             (jab.jumlahMinyak * hargaMinyak) + (jab.jumlahTelur * hargaTelur) +
+// // 	             (jab.jumlahSabun * hargaSabun) + (jab.jumlahShampoo * hargaShampoo) +
+// // 	             (jab.jumlahTeh * hargaTeh) + (jab.jumlahKopi * hargaKopi) +
+// // 	             (jab.jumlahRokok * hargaRokok) + (jab.jumlahMie * hargaMie);
+
+// }
+
+struct JumlahAwalBarang{
+	int jumlahberas, jumlahgula, jumlahMinyak, jumlahTelur,jumlahSabun, jumlahShampoo, jumlahTeh, jumlahKopi, jumlahRokok, jumlahMie;
+
+};
+
+int main() {
+	JumlahAwalBarang jab;
+	jab.jumlahberas = 0;
+	jab.jumlahgula =0;
+	jab.jumlahTelur = 0;
+	jab.jumlahSabun = 0;
+	jab.jumlahShampoo = 0;
+	jab.jumlahTeh = 0;
+	jab.jumlahMinyak = 0;
+	jab.jumlahKopi = 0;
+	jab.jumlahRokok = 0;
+	jab.jumlahMie = 0;
+	cout << jab.jumlahberas << jab.jumlahgula;
+	cout << endl;
+	//INISIASI
 	int hargaBeras1 = 15000, hargaGula = 14000, hargaMinyak = 16000, hargaTelur = 27000;
 	int hargaSabun = 8000, hargaShampoo = 12000, hargaTeh = 6000, hargaKopi = 2000;
 	int hargaRokok = 25000, hargaMie = 3500;
@@ -48,43 +75,43 @@ int main() {
 		// proses pembelian
 		switch (pilihan) {
 		case 1:
-			jumlahBeras1 += jumlahBarang;
+			jab.jumlahberas += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " kg Beras.\n";
 			break;
 		case 2:
-			jumlahGula += jumlahBarang;
+			jab.jumlahgula += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " kg Gula.\n";
 			break;
 		case 3:
-			jumlahMinyak += jumlahBarang;
+			jab.jumlahMinyak += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " L Minyak.\n";
 			break;
 		case 4:
-			jumlahTelur += jumlahBarang;
+			jab.jumlahTelur += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " kg Telur.\n";
 			break;
 		case 5:
-			jumlahSabun += jumlahBarang;
+			jab.jumlahSabun += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Sabun Mandi.\n";
 			break;
 		case 6:
-			jumlahShampoo += jumlahBarang;
+			jab.jumlahShampoo += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Shampoo.\n";
 			break;
 		case 7:
-			jumlahTeh += jumlahBarang;
+			jab.jumlahTeh += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Teh Celup.\n";
 			break;
 		case 8:
-			jumlahKopi += jumlahBarang;
+			jab.jumlahKopi += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Kopi Sachet.\n";
 			break;
 		case 9:
-			jumlahRokok += jumlahBarang;
+			jab.jumlahRokok += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Bungkus Rokok.\n";
 			break;
 		case 10:
-			jumlahMie += jumlahBarang;
+			jab.jumlahMie += jumlahBarang;
 			cout << " Anda membeli " << jumlahBarang << " Mie Instan.\n";
 			break;
 		}
@@ -95,11 +122,12 @@ int main() {
 	} while (lanjut == 'y' || lanjut == 'Y');
 
 	// Hitung total harga semua barang
-	totalHarga = (jumlahBeras1 * hargaBeras1) + (jumlahGula * hargaGula) +
-	             (jumlahMinyak * hargaMinyak) + (jumlahTelur * hargaTelur) +
-	             (jumlahSabun * hargaSabun) + (jumlahShampoo * hargaShampoo) +
-	             (jumlahTeh * hargaTeh) + (jumlahKopi * hargaKopi) +
-	             (jumlahRokok * hargaRokok) + (jumlahMie * hargaMie);
+	totalHarga = (jab.jumlahberas * hargaBeras1) + (jab.jumlahgula * hargaGula) +
+	             (jab.jumlahMinyak * hargaMinyak) + (jab.jumlahTelur * hargaTelur) +
+	             (jab.jumlahSabun * hargaSabun) + (jab.jumlahShampoo * hargaShampoo) +
+	             (jab.jumlahTeh * hargaTeh) + (jab.jumlahKopi * hargaKopi) +
+	             (jab.jumlahRokok * hargaRokok) + (jab.jumlahMie * hargaMie);
+
 
 	// Tentukan diskon berdasarkan total belanja
 	if (totalHarga >= 300000) {
@@ -122,26 +150,26 @@ int main() {
 	     << setw(15) << "Total Harga" << endl;
 	cout << "----------------------------------------------------\n";
 
-	if (jumlahBeras1 > 0)
-		cout << left << setw(15) << "Beras 1kg" << setw(10) << jumlahBeras1 << "Rp " << (jumlahBeras1 * hargaBeras1) << endl;
-	if (jumlahGula > 0)
-		cout << left << setw(15) << "Gula 1kg" << setw(10) << jumlahGula << "Rp " << (jumlahGula * hargaGula) << endl;
-	if (jumlahMinyak > 0)
-		cout << left << setw(15) << "Minyak 1L" << setw(10) << jumlahMinyak << "Rp " << (jumlahMinyak * hargaMinyak) << endl;
-	if (jumlahTelur > 0)
-		cout << left << setw(15) << "Telur 1kg" << setw(10) << jumlahTelur << "Rp " << (jumlahTelur * hargaTelur) << endl;
-	if (jumlahSabun > 0)
-		cout << left << setw(15) << "Sabun Mandi" << setw(10) << jumlahSabun << "Rp " << (jumlahSabun * hargaSabun) << endl;
-	if (jumlahShampoo > 0)
-		cout << left << setw(15) << "Shampoo" << setw(10) << jumlahShampoo << "Rp " << (jumlahShampoo * hargaShampoo) << endl;
-	if (jumlahTeh > 0)
-		cout << left << setw(15) << "Teh Celup" << setw(10) << jumlahTeh << "Rp " << (jumlahTeh * hargaTeh) << endl;
-	if (jumlahKopi > 0)
-		cout << left << setw(15) << "Kopi Sachet" << setw(10) << jumlahKopi << "Rp " << (jumlahKopi * hargaKopi) << endl;
-	if (jumlahRokok > 0)
-		cout << left << setw(15) << "Rokok" << setw(10) << jumlahRokok << "Rp " << (jumlahRokok * hargaRokok) << endl;
-	if (jumlahMie > 0)
-		cout << left << setw(15) << "Mie Instan" << setw(10) << jumlahMie << "Rp " << (jumlahMie * hargaMie) << endl;
+	if (jab.jumlahberas > 0)
+		cout << left << setw(15) << "Beras 1kg" << setw(10) << jab.jumlahberas << "Rp " << (jab.jumlahberas * hargaBeras1) << endl;
+	if (jab.jumlahgula > 0)
+		cout << left << setw(15) << "Gula 1kg" << setw(10) << jab.jumlahgula << "Rp " << (jab.jumlahgula * hargaGula) << endl;
+	if (jab.jumlahMinyak > 0)
+		cout << left << setw(15) << "Minyak 1L" << setw(10) << jab.jumlahMinyak << "Rp " << (jab.jumlahMinyak * hargaMinyak) << endl;
+	if (jab.jumlahTelur > 0)
+		cout << left << setw(15) << "Telur 1kg" << setw(10) << jab.jumlahTelur << "Rp " << (jab.jumlahTelur * hargaTelur) << endl;
+	if (jab.jumlahSabun > 0)
+		cout << left << setw(15) << "Sabun Mandi" << setw(10) << jab.jumlahSabun << "Rp " << (jab.jumlahSabun * hargaSabun) << endl;
+	if (jab.jumlahShampoo > 0)
+		cout << left << setw(15) << "Shampoo" << setw(10) << jab.jumlahShampoo << "Rp " << (jab.jumlahShampoo * hargaShampoo) << endl;
+	if (jab.jumlahTeh > 0)
+		cout << left << setw(15) << "Teh Celup" << setw(10) << jab.jumlahTeh << "Rp " << (jab.jumlahTeh * hargaTeh) << endl;
+	if (jab.jumlahKopi > 0)
+		cout << left << setw(15) << "Kopi Sachet" << setw(10) << jab.jumlahKopi << "Rp " << (jab.jumlahKopi * hargaKopi) << endl;
+	if (jab.jumlahRokok > 0)
+		cout << left << setw(15) << "Rokok" << setw(10) << jab.jumlahRokok << "Rp " << (jab.jumlahRokok * hargaRokok) << endl;
+	if (jab.jumlahMie > 0)
+			cout << left << setw(15) << "Mie Instan" << setw(10) << jab.jumlahMie << "Rp " << (jab.jumlahMie * hargaMie) << endl;
 
 	cout << "----------------------------------------------------\n";
 	cout << left << setw(25) << "TOTAL HARGA" << "Rp " << totalHarga << endl;
